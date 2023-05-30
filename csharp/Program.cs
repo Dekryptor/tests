@@ -1,6 +1,5 @@
 using System;
 using System.Timers;
-//using System.Threading;
 using System.Threading.Tasks;
 					
 public class Program
@@ -10,13 +9,10 @@ public class Program
         var timer = new Timer(2000);
 		timer.Elapsed += async (sender, eventArgs) =>
 		{
-			//await Task.Run(() => Console.WriteLine($"Elapsed event at {eventArgs.SignalTime:G}"));
 			await Task.Run(() => OnEventExecution(sender, eventArgs));
-			//throw new Exception();
 		};
-		//timer.AutoReset = false;
+		
 		timer.Start();
- 		
 		Console.ReadKey();
 	}
 	
